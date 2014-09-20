@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C4558690-9C6C-48A3-98AA-51057FDB3C5C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Install\DownloadsManager.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demo\DownloadManagerDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DownloadsManager">
+        <MSBuild Projects="Install\DownloadsManager.dproj"/>
+    </Target>
+    <Target Name="DownloadsManager:Clean">
+        <MSBuild Projects="Install\DownloadsManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DownloadsManager:Make">
+        <MSBuild Projects="Install\DownloadsManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DownloadManagerDemo">
+        <MSBuild Projects="Demo\DownloadManagerDemo.dproj"/>
+    </Target>
+    <Target Name="DownloadManagerDemo:Clean">
+        <MSBuild Projects="Demo\DownloadManagerDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DownloadManagerDemo:Make">
+        <MSBuild Projects="Demo\DownloadManagerDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DownloadsManager;DownloadManagerDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DownloadsManager:Clean;DownloadManagerDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DownloadsManager:Make;DownloadManagerDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

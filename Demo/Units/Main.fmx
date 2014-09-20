@@ -1,0 +1,115 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMobile = True
+  DesignerWidth = 384
+  DesignerHeight = 592
+  DesignerDeviceName = 'Google Nexus 4'
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object Button1: TButton
+    Align = Top
+    Height = 57.000000000000000000
+    Position.Y = 48.000000000000000000
+    TabOrder = 1
+    Text = 'Ba'#351'la'
+    Width = 384.000000000000000000
+    OnClick = Button1Click
+  end
+  object ToolBar1: TToolBar
+    Height = 48.000000000000000000
+    TabOrder = 5
+    Width = 384.000000000000000000
+    object Text1: TText
+      Align = Contents
+      Height = 48.000000000000000000
+      Text = 'Download Manager '#214'rne'#287'i'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.FontColor = claCrimson
+      Width = 384.000000000000000000
+    end
+  end
+  object Rectangle1: TRectangle
+    Align = Top
+    Height = 46.000000000000000000
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 115.000000000000000000
+    Sides = []
+    Width = 374.000000000000000000
+    object Label1: TLabel
+      Align = Top
+      Height = 25.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = #304'ndirilen 1:'
+      Width = 374.000000000000000000
+    end
+    object ProgressBar1: TProgressBar
+      Align = Client
+      Height = 10.000000000000000000
+      Orientation = Horizontal
+      Width = 374.000000000000000000
+    end
+  end
+  object Rectangle2: TRectangle
+    Align = Top
+    Height = 46.000000000000000000
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 227.000000000000000000
+    Sides = []
+    Width = 374.000000000000000000
+    object Label7: TLabel
+      Align = Top
+      Height = 25.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = #304'ndirilen 3:'
+      Width = 374.000000000000000000
+    end
+    object ProgressBar3: TProgressBar
+      Align = Client
+      Height = 10.000000000000000000
+      Orientation = Horizontal
+      Width = 374.000000000000000000
+    end
+  end
+  object Rectangle3: TRectangle
+    Align = Top
+    Height = 46.000000000000000000
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 171.000000000000000000
+    Sides = []
+    Width = 374.000000000000000000
+    object Label8: TLabel
+      Align = Top
+      Height = 25.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = #304'ndirilen 2:'
+      Width = 374.000000000000000000
+    end
+    object ProgressBar2: TProgressBar
+      Align = Client
+      Height = 10.000000000000000000
+      Orientation = Horizontal
+      Width = 374.000000000000000000
+    end
+  end
+  object DownloadManagers1: TDownloadManagers
+    OnProgress = DownloadManagers1Progress
+    Left = 296
+    Top = 288
+  end
+end
