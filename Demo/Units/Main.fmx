@@ -17,14 +17,14 @@ object Form3: TForm3
     Align = Top
     Height = 57.000000000000000000
     Position.Y = 48.000000000000000000
-    TabOrder = 1
+    TabOrder = 2
     Text = 'Ba'#351'la'
     Width = 384.000000000000000000
     OnClick = Button1Click
   end
   object ToolBar1: TToolBar
     Height = 48.000000000000000000
-    TabOrder = 5
+    TabOrder = 6
     Width = 384.000000000000000000
     object Text1: TText
       Align = Contents
@@ -106,6 +106,15 @@ object Form3: TForm3
       Orientation = Horizontal
       Width = 374.000000000000000000
     end
+  end
+  object Button2: TButton
+    Align = Bottom
+    Height = 57.000000000000000000
+    Position.Y = 510.000000000000000000
+    TabOrder = 1
+    Text = #304'ptal'
+    Width = 384.000000000000000000
+    OnClick = Button2Click
   end
   object DownloadManagers1: TDownloadManagers
     OnProgress = DownloadManagers1Progress

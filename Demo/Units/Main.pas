@@ -22,8 +22,10 @@ type
     Rectangle3: TRectangle;
     Label8: TLabel;
     ProgressBar2: TProgressBar;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
     procedure DownloadManagers1Progress(Sender: TObject; Items: TDownloadItems);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,6 +65,12 @@ begin
   end;
 
   A.StartAll;
+end;
+
+procedure TForm3.Button2Click(Sender: TObject);
+begin
+//  DownloadManagers1.StopAll;
+  DownloadManagers1.Items.StopDownload(5);
 end;
 
 procedure TForm3.DownloadManagers1Progress(Sender: TObject;

@@ -1,7 +1,9 @@
 unit Androidapi.DownloadsManager;
 
 interface
-Uses System.Classes, Generics.Collections, IdHttp, IdComponent, System.SysUtils;
+Uses System.Classes, System.Actions, System.SysUtils,
+     Generics.Collections,
+     IdHttp, IdComponent;
 
 type
   TDownloadManagers = class;
@@ -11,6 +13,7 @@ type
     private type
       TDownloadItem = class
       private
+        Http            : TIdHTTP;
         FSource,
         FTarget         : String;
         FPercent        : Integer;
@@ -24,6 +27,7 @@ type
         constructor Create(AOwner: TDownloadItems);
         destructor  Destroy; override;
         procedure Start;
+        procedure Stop;
       published
         property Source   : String       read SGetWrite write SSetWrite;
         property Target   : String       read TGetWrite write TSetWrite;
@@ -36,12 +40,12 @@ type
       FTarget: String;
       FOwner : TDownloadManagers;
       function GetItem(const Index: Integer): TDownloadItem;
-      procedure Deneme;
     public
+      procedure StopDownload(const Index: Integer);
       constructor Create(AOwner: TDownloadManagers);
       destructor  Destroy; override;
-      function Add:TDownloadItem;
-      property Item[const Index: Integer]: TDownloadItem read GetItem; default;
+      function Add: TDownloadItem;
+      property Item[const Index: Integer]     : TDownloadItem read GetItem; default;
   end;
 
   TOnProgress = procedure(Sender: TObject; Items: TDownloadItems) of object;
@@ -71,6 +75,7 @@ type
       destructor  Destroy; override;
       procedure StartAll;
       procedure ClearAll;
+      procedure StopAll;
       procedure DoChange(T:TDownloadItems);
 
       property Count          : Integer        read GetCount;
@@ -126,6 +131,16 @@ begin
   end;
 end;
 
+procedure TDownloadManagers.StopAll;
+var
+  I: Integer;
+begin
+  if FDownloadItems.FItems.Count > 0 then
+    for I := 0 to GetCount -1  do
+      Items[i].Stop;
+//      Items.
+end;
+
 { TDownloadItems }
 
 function TDownloadItems.Add: TDownloadItem;
@@ -140,9 +155,12 @@ begin
   FOwner := AOwner;
 end;
 
-procedure TDownloadItems.Deneme;
+procedure TDownloadItems.StopDownload(const Index: Integer);
 begin
-  TDownloadManagers(FOwner).DoChange(Self);
+  if FItems.Count >= Index then
+    FItems[Index].Stop
+  else
+    raise EActionError.CreateFMT('This index not found!', ['']);
 end;
 
 destructor TDownloadItems.Destroy;
@@ -211,7 +229,6 @@ end;
 
 procedure TDownloadItems.TDownloadItem.Start;
 var
-  Http: TIdHTTP;
   MS: TMemoryStream;
 begin
   Http := TIdHTTP.Create(nil);
@@ -227,12 +244,15 @@ begin
 
       MS.SaveToFile(FTarget);
     finally
-
-
       Disconnect; Free;
       MS.Free;
     end;
   end;
+end;
+
+procedure TDownloadItems.TDownloadItem.Stop;
+begin
+  Http.Disconnect;
 end;
 
 function TDownloadItems.TDownloadItem.TGetWrite: String;
