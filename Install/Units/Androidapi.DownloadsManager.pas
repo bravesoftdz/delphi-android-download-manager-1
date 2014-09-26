@@ -207,12 +207,7 @@ begin
     FPercent := 100 * AWorkCount div ContentLength;
     if Assigned(FOwner) and Assigned(FOwner.FOwner.OnProgress) then
          FOwner.FOwner.OnProgress(Self, FOwner);
-
-
     // Tekiklenme yeri % ler hesaplanýyor.
-
-//    if Assigned(TDownloadManagers(MasterComponent).FOnProgress) then
-//      TDownloadManagers(MasterComponent).FDownloadItems.DoChange;
   end;
 end;
 
