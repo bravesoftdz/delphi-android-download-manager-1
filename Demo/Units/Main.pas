@@ -31,7 +31,6 @@ type
     DownloadManagers2: TDownloadManagers;
     Button3: TButton;
     TabItem3: TTabItem;
-    Button4: TButton;
     DownloadManagers3: TDownloadManagers;
     TabControl2: TTabControl;
     TabItem4: TTabItem;
@@ -39,6 +38,8 @@ type
     Label2: TLabel;
     VertScrollBox2: TVertScrollBox;
     DownloadManagers4: TDownloadManagers;
+    Button4: TButton;
+    Button5: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);

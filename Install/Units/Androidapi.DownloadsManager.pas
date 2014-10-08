@@ -266,8 +266,6 @@ procedure TDownloadItems.StopDownload(const Index: Integer);
 begin
   if FItems.Count >= Index then
     FItems[Index].Stop
-  else
-    raise EActionError.CreateFMT('This index not found!', ['']);
 end;
 
 destructor TDownloadItems.Destroy;
@@ -289,7 +287,11 @@ begin
   begin
     Parent     := AOwner;
     Fill.Color := $FFF39912;
-    Align      := TAlignLayout.Top;
+    {$IF CompilerVersion > 26}
+      Align      := TAlignLayout.Top;
+    {$ELSE}
+      Align      := TAlignLayout.alTop;
+    {$ENDIF}
     Height     := 46;
     with Margins do
     begin
@@ -304,14 +306,20 @@ begin
     with FTitle do
     begin
       Parent := BG;
-      Align  := TAlignLayout.Top;
       Height := 25;
       Color := $FF34495E;
-      with TextSettings do
-      begin
-        Font.Size := 16;
-        HorzAlign := TTextAlign.Leading;
-      end;
+      {$IF CompilerVersion > 26}
+        Align  := TAlignLayout.Top;
+        with TextSettings do
+        begin
+          Font.Size := 16;
+          HorzAlign := TTextAlign.Leading;
+        end;
+      {$ELSE}
+        Align         := TAlignLayout.alTop;
+        Font.Size     := 16;
+        HorzTextAlign := TTextAlign.taLeading;
+      {$ENDIF}
       Text := 'Download Item';
     end;
 
@@ -325,7 +333,11 @@ begin
         Left  := 5;
         Right := 5;
       end;
-      Align       := TAlignLayout.Client;
+      {$IF CompilerVersion > 26}
+        Align       := TAlignLayout.Client;
+      {$ELSE}
+        Align       := TAlignLayout.alClient;
+      {$ENDIF}
       Min         := 0;
       Max         := 100;
     end;
@@ -335,10 +347,15 @@ begin
     with xPercent do
     begin
       Parent := BG;
-      Align  := TAlignLayout.Bottom;
       Height := 15;
-      with TextSettings do
-        Font.Size := 12;
+      {$IF CompilerVersion > 26}
+        Align  := TAlignLayout.Bottom;
+        with TextSettings do
+          Font.Size := 12;
+      {$ELSE}
+        Align  := TAlignLayout.alBottom;
+        Font.Size   := 12;
+      {$ENDIF}
       Color := $FF34495E;
       Text := '%0';
     end;
@@ -491,7 +508,11 @@ begin
   begin
     Parent     := AOwner;
     Fill.Color := $FFF39912;
-    Align      := TAlignLayout.Top;
+    {$IF CompilerVersion > 26}
+      Align      := TAlignLayout.Top;
+    {$ELSE}
+      Align      := TAlignLayout.alTop;
+    {$ENDIF}
     Height     := 46;
     with Margins do
     begin
@@ -506,14 +527,20 @@ begin
     with FTitle do
     begin
       Parent := BG;
-      Align  := TAlignLayout.Top;
       Height := 25;
       Color := $FF34495E;
-      with TextSettings do
-      begin
-        Font.Size := 16;
-        HorzAlign := TTextAlign.Leading;
-      end;
+      {$IF CompilerVersion > 26}
+        Align  := TAlignLayout.Top;
+        with TextSettings do
+        begin
+          Font.Size := 16;
+          HorzAlign := TTextAlign.Leading;
+        end;
+      {$ELSE}
+        Align         := TAlignLayout.alTop;
+        Font.Size     := 16;
+        HorzTextAlign := TTextAlign.taLeading;
+      {$ENDIF}
       Text := 'Download Item';
     end;
 
@@ -527,7 +554,11 @@ begin
         Left  := 5;
         Right := 5;
       end;
-      Align       := TAlignLayout.Client;
+      {$IF CompilerVersion > 26}
+        Align       := TAlignLayout.Client;
+      {$ELSE}
+        Align       := TAlignLayout.alClient;
+      {$ENDIF}
       Min         := 0;
       Max         := 100;
     end;
@@ -537,10 +568,15 @@ begin
     with xPercent do
     begin
       Parent := BG;
-      Align  := TAlignLayout.Bottom;
       Height := 15;
-      with TextSettings do
-        Font.Size := 12;
+      {$IF CompilerVersion > 26}
+        Align  := TAlignLayout.Bottom;
+        with TextSettings do
+          Font.Size := 12;
+      {$ELSE}
+        Align  := TAlignLayout.alBottom;
+        Font.Size   := 12;
+      {$ENDIF}
       Color := $FF34495E;
       Text := '%0';
     end;
