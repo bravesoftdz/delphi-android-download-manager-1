@@ -31,7 +31,8 @@ requires
   rtl,
   IndySystem,
   IndyProtocols,
-  IndyCore;
+  IndyCore,
+  fmx;
 
 contains
   Androidapi.DownloadsManager in 'Units\Androidapi.DownloadsManager.pas';

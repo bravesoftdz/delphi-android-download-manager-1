@@ -2,123 +2,240 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Caption = 'Form3'
-  ClientHeight = 567
-  ClientWidth = 384
+  ClientHeight = 359
+  ClientWidth = 598
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMobile = True
-  DesignerWidth = 384
-  DesignerHeight = 592
+  DesignerWidth = 598
+  DesignerHeight = 384
   DesignerDeviceName = 'Google Nexus 4'
-  DesignerOrientation = 0
+  DesignerOrientation = 3
   DesignerOSVersion = ''
-  object Button1: TButton
-    Align = Top
-    Height = 57.000000000000000000
-    Position.Y = 48.000000000000000000
-    TabOrder = 2
-    Text = 'Ba'#351'la'
-    Width = 384.000000000000000000
-    OnClick = Button1Click
-  end
   object ToolBar1: TToolBar
     Height = 48.000000000000000000
-    TabOrder = 6
-    Width = 384.000000000000000000
+    TabOrder = 4
+    Width = 598.000000000000000000
     object Text1: TText
       Align = Contents
       Height = 48.000000000000000000
       Text = 'Download Manager '#214'rne'#287'i'
       TextSettings.Font.Size = 20.000000000000000000
       TextSettings.FontColor = claCrimson
-      Width = 384.000000000000000000
+      Width = 598.000000000000000000
     end
   end
-  object Rectangle1: TRectangle
-    Align = Top
-    Height = 46.000000000000000000
-    Margins.Left = 5.000000000000000000
-    Margins.Top = 10.000000000000000000
-    Margins.Right = 5.000000000000000000
-    Position.X = 5.000000000000000000
-    Position.Y = 115.000000000000000000
-    Sides = []
-    Width = 374.000000000000000000
-    object Label1: TLabel
-      Align = Top
-      Height = 25.000000000000000000
-      TextSettings.HorzAlign = Center
-      Text = #304'ndirilen 1:'
-      Width = 374.000000000000000000
+  object TabControl1: TTabControl
+    Align = Client
+    FullSize = True
+    Height = 311.000000000000000000
+    TabHeight = 49.000000000000000000
+    TabIndex = 2
+    TabOrder = 8
+    Width = 598.000000000000000000
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 49.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Manuel Download Item'
+      Width = 199.000000000000000000
+      object Button1: TButton
+        Align = Top
+        Height = 57.000000000000000000
+        TabOrder = 2
+        Text = 'Ba'#351'la'
+        Width = 598.000000000000000000
+        OnClick = Button1Click
+      end
+      object Button2: TButton
+        Align = Bottom
+        Height = 57.000000000000000000
+        Position.Y = 205.000000000000000000
+        TabOrder = 1
+        Text = #304'ptal'
+        Width = 598.000000000000000000
+        OnClick = Button2Click
+      end
+      object Rectangle1: TRectangle
+        Align = Top
+        Height = 46.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 67.000000000000000000
+        Sides = []
+        Width = 588.000000000000000000
+        object Label1: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Height = 25.000000000000000000
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.HorzAlign = Center
+          Text = #304'ndirilen 1:'
+          Width = 588.000000000000000000
+        end
+        object ProgressBar1: TProgressBar
+          Align = Client
+          Height = 21.000000000000000000
+          Orientation = Horizontal
+          Width = 588.000000000000000000
+        end
+      end
+      object Rectangle2: TRectangle
+        Align = Top
+        Height = 46.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 179.000000000000000000
+        Sides = []
+        Width = 588.000000000000000000
+        object Label7: TLabel
+          Align = Top
+          Height = 25.000000000000000000
+          TextSettings.HorzAlign = Center
+          Text = #304'ndirilen 3:'
+          Width = 588.000000000000000000
+        end
+        object ProgressBar3: TProgressBar
+          Align = Client
+          Height = 21.000000000000000000
+          Orientation = Horizontal
+          Width = 588.000000000000000000
+        end
+      end
+      object Rectangle3: TRectangle
+        Align = Top
+        Height = 46.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 123.000000000000000000
+        Sides = []
+        Width = 588.000000000000000000
+        object Label8: TLabel
+          Align = Top
+          Height = 25.000000000000000000
+          TextSettings.HorzAlign = Center
+          Text = #304'ndirilen 2:'
+          Width = 588.000000000000000000
+        end
+        object ProgressBar2: TProgressBar
+          Align = Client
+          Height = 21.000000000000000000
+          Orientation = Horizontal
+          Width = 588.000000000000000000
+        end
+      end
     end
-    object ProgressBar1: TProgressBar
-      Align = Client
-      Height = 10.000000000000000000
-      Orientation = Horizontal
-      Width = 374.000000000000000000
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 49.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Auto Download Item'
+      Width = 200.000000000000000000
+      object VertScrollBox1: TVertScrollBox
+        Align = Client
+        Height = 218.000000000000000000
+        TabOrder = 0
+        Width = 598.000000000000000000
+      end
+      object Button3: TButton
+        Align = Top
+        Height = 44.000000000000000000
+        TabOrder = 1
+        Text = 'Ba'#351'la'
+        Width = 598.000000000000000000
+        OnClick = Button3Click
+      end
     end
-  end
-  object Rectangle2: TRectangle
-    Align = Top
-    Height = 46.000000000000000000
-    Margins.Left = 5.000000000000000000
-    Margins.Top = 10.000000000000000000
-    Margins.Right = 5.000000000000000000
-    Position.X = 5.000000000000000000
-    Position.Y = 227.000000000000000000
-    Sides = []
-    Width = 374.000000000000000000
-    object Label7: TLabel
-      Align = Top
-      Height = 25.000000000000000000
-      TextSettings.HorzAlign = Center
-      Text = #304'ndirilen 3:'
-      Width = 374.000000000000000000
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 49.000000000000000000
+      IsSelected = True
+      TabOrder = 0
+      Text = 'Package Download'
+      Width = 199.000000000000000000
+      object Button4: TButton
+        Align = Top
+        Height = 44.000000000000000000
+        TabOrder = 0
+        Text = 'Ba'#351'la'
+        Width = 598.000000000000000000
+        OnClick = Button4Click
+      end
+      object TabControl2: TTabControl
+        Align = Client
+        FullSize = True
+        Height = 218.000000000000000000
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 1
+        Width = 598.000000000000000000
+        object TabItem4: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 49.000000000000000000
+          IsSelected = True
+          TabOrder = 0
+          Text = 'Manuel'
+          Width = 299.000000000000000000
+          object Label2: TLabel
+            Align = Top
+            Height = 23.000000000000000000
+            Text = 'Label2'
+            Width = 598.000000000000000000
+          end
+        end
+        object TabItem5: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 49.000000000000000000
+          IsSelected = False
+          TabOrder = 0
+          Text = 'Auto Download Item'
+          Width = 299.000000000000000000
+          object VertScrollBox2: TVertScrollBox
+            Align = Client
+            Height = 169.000000000000000000
+            TabOrder = 0
+            Width = 598.000000000000000000
+          end
+        end
+      end
     end
-    object ProgressBar3: TProgressBar
-      Align = Client
-      Height = 10.000000000000000000
-      Orientation = Horizontal
-      Width = 374.000000000000000000
-    end
-  end
-  object Rectangle3: TRectangle
-    Align = Top
-    Height = 46.000000000000000000
-    Margins.Left = 5.000000000000000000
-    Margins.Top = 10.000000000000000000
-    Margins.Right = 5.000000000000000000
-    Position.X = 5.000000000000000000
-    Position.Y = 171.000000000000000000
-    Sides = []
-    Width = 374.000000000000000000
-    object Label8: TLabel
-      Align = Top
-      Height = 25.000000000000000000
-      TextSettings.HorzAlign = Center
-      Text = #304'ndirilen 2:'
-      Width = 374.000000000000000000
-    end
-    object ProgressBar2: TProgressBar
-      Align = Client
-      Height = 10.000000000000000000
-      Orientation = Horizontal
-      Width = 374.000000000000000000
-    end
-  end
-  object Button2: TButton
-    Align = Bottom
-    Height = 57.000000000000000000
-    Position.Y = 510.000000000000000000
-    TabOrder = 1
-    Text = #304'ptal'
-    Width = 384.000000000000000000
-    OnClick = Button2Click
   end
   object DownloadManagers1: TDownloadManagers
     OnProgress = DownloadManagers1Progress
-    Left = 296
-    Top = 288
+    Left = 64
+    Top = 56
+  end
+  object DownloadManagers2: TDownloadManagers
+    ParentVertScroll = VertScrollBox1
+    Left = 264
+    Top = 56
+  end
+  object DownloadManagers3: TDownloadManagers
+    OnProgress = DownloadManagers3Progress
+    Left = 168
+    Top = 128
+  end
+  object DownloadManagers4: TDownloadManagers
+    Left = 488
+    Top = 144
   end
 end
